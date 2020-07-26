@@ -555,11 +555,11 @@ func main() {
 		},
 		cli.StringFlag{
 			Name:  "input-type",
-			Usage: "currently json, yaml, dotenv and binary are supported. If not set, sops will use the file's extension to determine the type",
+			Usage: "currently json, yaml, toml, dotenv and binary are supported. If not set, sops will use the file's extension to determine the type",
 		},
 		cli.StringFlag{
 			Name:  "output-type",
-			Usage: "currently json, yaml, dotenv and binary are supported. If not set, sops will use the input file's extension to determine the output format",
+			Usage: "currently json, yaml, toml, dotenv and binary are supported. If not set, sops will use the input file's extension to determine the output format",
 		},
 		cli.BoolFlag{
 			Name:  "show-master-keys, s",

@@ -58,12 +58,17 @@ func newYamlStore() Store {
 	return &yaml.Store{}
 }
 
+func newTomlStore() Store {
+	return &yaml.Store{}
+}
+
 var storeConstructors = map[Format]storeConstructor{
 	Binary: newBinaryStore,
 	Dotenv: newDotenvStore,
 	Ini:    newIniStore,
 	Json:   newJsonStore,
 	Yaml:   newYamlStore,
+	Toml:   newTomlStore,
 }
 
 // DecryptTreeOpts are the options needed to decrypt a tree

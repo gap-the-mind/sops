@@ -11,6 +11,7 @@ func TestFormatFromString(t *testing.T) {
 	assert.Equal(t, Dotenv, FormatFromString("dotenv"))
 	assert.Equal(t, Ini, FormatFromString("ini"))
 	assert.Equal(t, Yaml, FormatFromString("yaml"))
+	assert.Equal(t, Toml, FormatFromString("toml"))
 	assert.Equal(t, Json, FormatFromString("json"))
 }
 
@@ -21,6 +22,7 @@ func TestFormatForPath(t *testing.T) {
 	assert.Equal(t, Json, FormatForPath("/path/to/foobar.json"))
 	assert.Equal(t, Yaml, FormatForPath("/path/to/foobar.yml"))
 	assert.Equal(t, Yaml, FormatForPath("/path/to/foobar.yaml"))
+	assert.Equal(t, Toml, FormatForPath("/path/to/foobar.toml"))
 }
 
 func TestFormatForPathOrString(t *testing.T) {
@@ -33,6 +35,8 @@ func TestFormatForPathOrString(t *testing.T) {
 	assert.Equal(t, Json, FormatForPathOrString("/path/to/foobar.json", ""))
 	assert.Equal(t, Yaml, FormatForPathOrString("/path/to/foobar", "yaml"))
 	assert.Equal(t, Yaml, FormatForPathOrString("/path/to/foobar.yml", ""))
+	assert.Equal(t, Toml, FormatForPathOrString("/path/to/foobar", "toml"))
+	assert.Equal(t, Toml, FormatForPathOrString("/path/to/foobar.toml", ""))
 
 	assert.Equal(t, Ini, FormatForPathOrString("/path/to/foobar.yml", "ini"))
 	assert.Equal(t, Binary, FormatForPathOrString("/path/to/foobar.yml", "binary"))
